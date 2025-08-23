@@ -256,6 +256,14 @@
             ConsoleHelper.WriteOnPosition(PlayerPosition.North.ToString(), 40 - (PlayerPosition.North.ToString().Length / 2), 3, ConsoleColor.Black, ConsoleColor.Gray);
             ConsoleHelper.WriteOnPosition(PlayerPosition.South.ToString(), 40 - (PlayerPosition.South.ToString().Length / 2), Console.WindowHeight - 5, ConsoleColor.Black, ConsoleColor.Gray);
 
+            // Show the middle card if it exists (e.g., during bidding phase)
+            if (context is PlayerGetBidContext bidContext && bidContext.CurrentContract.Type == BidType.Pass && Program.GameInstance?.MiddleCard != null)
+            {
+                var middleCard = Program.GameInstance.MiddleCard;
+                var cardAsString = middleCard.ToString();
+                ConsoleHelper.WriteOnPosition($"Middle card: {cardAsString}", 40 - ("Middle card: ".Length + cardAsString.Length) / 2, 7, ConsoleColor.Yellow, ConsoleColor.DarkGreen);
+            }
+
             if (drawPlayerCards)
             {
                 var left = 40 - (string.Join(string.Empty, context.MyCards).Length / 2);

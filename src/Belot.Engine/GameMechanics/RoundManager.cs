@@ -18,7 +18,12 @@
 
         private readonly Deck deck;
 
-        private readonly List<CardCollection> playerCards;
+    private readonly List<CardCollection> playerCards;
+
+    /// <summary>
+    /// The card in the middle of the table, available to be bought by the contract winner after bidding.
+    /// </summary>
+    public Card MiddleCard { get; private set; }
 
         public RoundManager(IPlayer southPlayer, IPlayer eastPlayer, IPlayer northPlayer, IPlayer westPlayer)
         {
@@ -48,6 +53,7 @@
             this.playerCards[2].Clear();
             this.playerCards[3].Clear();
 
+
             // Deal 5 cards to each player
             for (var i = 0; i < 5; i++)
             {
@@ -56,6 +62,9 @@
                 this.playerCards[2].Add(this.deck.GetNextCard());
                 this.playerCards[3].Add(this.deck.GetNextCard());
             }
+
+            // Deal the middle card (show on table, not in any hand yet)
+            this.MiddleCard = this.deck.GetNextCard();
 
             // Bidding phase
             var contract = this.contractManager.GetContract(
@@ -69,16 +78,26 @@
             // All pass
             if (contract.Type == BidType.Pass)
             {
+                this.MiddleCard = null; // Remove from table if all pass
                 return new RoundResult(contract);
             }
 
-            // Deal 3 more cards to each player
-            for (var i = 0; i < 3; i++)
+            // Deal 3 more cards to each player, except the contract winner gets 2
+            int contractWinnerIndex = contract.Player.Index();
+            for (var playerIndex = 0; playerIndex < 4; playerIndex++)
             {
-                this.playerCards[0].Add(this.deck.GetNextCard());
-                this.playerCards[1].Add(this.deck.GetNextCard());
-                this.playerCards[2].Add(this.deck.GetNextCard());
-                this.playerCards[3].Add(this.deck.GetNextCard());
+                int cardsToDeal = playerIndex == contractWinnerIndex ? 2 : 3;
+                for (var i = 0; i < cardsToDeal; i++)
+                {
+                    this.playerCards[playerIndex].Add(this.deck.GetNextCard());
+                }
+            }
+
+            // The contract winner "buys" the middle card: add it to their hand, then remove from table
+            if (this.MiddleCard != null)
+            {
+                this.playerCards[contractWinnerIndex].Add(this.MiddleCard);
+                this.MiddleCard = null;
             }
 
             // Play 8 tricks

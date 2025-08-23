@@ -1,7 +1,7 @@
 ﻿namespace Belot.Engine
 {
     using System.Collections.Generic;
-
+    using Belot.Engine.Cards;
     using Belot.Engine.Game;
     using Belot.Engine.GameMechanics;
     using Belot.Engine.Players;
@@ -81,5 +81,7 @@
 
             return gameResult;
         }
+
+        public Card MiddleCard => this.roundManager.MiddleCard;
     }
 }

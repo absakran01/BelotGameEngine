@@ -12,6 +12,8 @@
 
     public static class Program
     {
+        public static BelotGame GameInstance { get; private set; }
+
         public static void Main()
         {
             Console.OutputEncoding = Encoding.Unicode;
@@ -23,8 +25,8 @@
             IPlayer eastPlayer = new SmartPlayer();
             IPlayer northPlayer = new SmartPlayer();
             IPlayer westPlayer = new SmartPlayer();
-            var game = new BelotGame(southPlayer, eastPlayer, northPlayer, westPlayer);
-            var result = game.PlayGame(PlayerPosition.South);
+            GameInstance = new BelotGame(southPlayer, eastPlayer, northPlayer, westPlayer);
+            var result = GameInstance.PlayGame(PlayerPosition.South);
             Console.WriteLine("Winner: " + result.Winner);
 
             //// RandomCards();
