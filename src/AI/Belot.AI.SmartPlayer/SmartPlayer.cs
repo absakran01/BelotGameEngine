@@ -59,13 +59,6 @@
                 bids.Add(BidType.Spades, CalculateTrumpBidPoints(cards, CardSuit.Spade, announcePoints));
             }
 
-            if (context.AvailableBids.HasFlag(BidType.AllTrumps))
-            {
-                bids.Add(
-                    BidType.AllTrumps,
-                    CalculateAllTrumpsBidPoints(cards, context.Bids, context.MyPosition.GetTeammate(), announcePoints));
-            }
-
             if (context.AvailableBids.HasFlag(BidType.NoTrumps))
             {
                 bids.Add(BidType.NoTrumps, CalculateNoTrumpsBidPoints(cards));
@@ -93,13 +86,7 @@
             }
 
             IPlayStrategy strategy;
-            if (context.CurrentContract.Type.HasFlag(BidType.AllTrumps))
-            {
-                strategy = context.CurrentContract.Player.IsInSameTeamWith(context.MyPosition)
-                               ? this.allTrumpsOursContractStrategy
-                               : this.allTrumpsTheirsContractStrategy;
-            }
-            else if (context.CurrentContract.Type.HasFlag(BidType.NoTrumps))
+            if (context.CurrentContract.Type.HasFlag(BidType.NoTrumps))
             {
                 strategy = context.CurrentContract.Player.IsInSameTeamWith(context.MyPosition)
                                ? this.noTrumpsOursContractStrategy

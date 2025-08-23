@@ -21,7 +21,7 @@ The dealer, if he/she so wishes shuffles the deck and hands the deck to the play
 
 ## 2. Bidding
 
-The point of the dealing is to determine which game is going to be played out. Here are the possible games:
+The point of the dealing is to determine which game is going to be played out. Here are the possible games:-----SHOULD ADD BUYING
 
 ### 2.1 Specific trump game.
 
@@ -31,9 +31,9 @@ With a trump game one of the suits is decided as a trump suit, the rest are equa
 
 There is no trump in this game and the strengths of all the suits are as follows: A, 10, K, Q, J, 9 ,8 ,7.
 
-### 2.3 All Trumps
+### 2.3 All Trumps-------------------REMOVE
 
-Here all the suits are trump suits i.e. the strengths of the cards is as follows: J,9,A,10,K,Q,8,7
+Here all the suits are trump suits i.e. the strengths of the cards is as follows: J,9,A,10,K,Q,8,7    ---------------REMOVE
 
 Bidding proceeds as follows: The first bidder is the player to the right of the dealer. He proposes one of the variants of the game (i.e. chooses a trump suit or
 "no trump" or "all trumps". If he does not wish to propose a game he will bid "pass". The next player can suggest a higher game or pass. The lowest game is Clubs followed by diamonds then hearts then spades then "no trump" then "all trumps". When a valid bid is made an opponent may declare that he/she wishes to double. This means that the opponent intends on winning the proposed game. If that does happen then the score for the game is doubled. In reply the original bidding team may declare a redouble. In that event the score is quadrupled. Bidding ends when three players consecutively bid a pass. Then the dealer deals 3 extra cards. If no valid game was bid (everyone said pass) the cards are gathered together and the next person deals.
@@ -50,9 +50,9 @@ The basics of the game is in the compulsory following of the "wanted suit". If t
 
 Same as the specific trump game but there is no trump and the only rule in play is the following of suit.
 
-### 3.3 "All Trumps game"
+### 3.3 "All Trumps game"----------------------------------REMOVE
 
-Here all suits are trumps so as well as following suit you must give a higher trump if you can regardless of who is winning the hand.
+Here all suits are trumps so as well as following suit you must give a higher trump if you can regardless of who is winning the hand.--------------------REMOVE
 
 ## 4. Scoring
 
@@ -60,22 +60,22 @@ At the end of the game each teams counts their points from the hands they have w
 
 | Card | Trump | Not a Trump |
 | --- | --- | --- |
-| 7   | 0   | 0   |
-| 8   | 0   | 0   |
-| 9   | 14  | 0   |
-| 10  | 10  | 10  |
-| J   | 20  | 2   |
-| Q   | 3   | 3   |
-| K   | 4   | 4   |
-| A   | 11  | 11  |
+| 7   | 0   | 0   |--
+| 8   | 0   | 0   |--
+| 9   | 14  | 0   |--
+| 10  | 10  | 10  |--
+| J   | 20  | 2   |--
+| Q   | 3   | 3   |--
+| K   | 4   | 4   |--
+| A   | 11  | 11  |--
 
-To the total team score is added points scored from bonuses (see below). When the No Trumps game is played the points scored are doubled (except for the bonus of getting all the hands). If the team that bid the game scores more points then the opponent then the game is won by the bidders. If the points are equal then the game is declared hanging. If the bidding team does not score more points then the opponent then the game is forfeited by the bidding team.
+To the total team score is added points scored from bonuses (see below). When the No Trumps game is played the points scored are doubled (except for the bonus of getting all the hands). If the team that bid the game scores more points then the opponent then the game is won by the bidders. If the points are equal then the game is declared hanging. If the bidding team does not score more points then the opponent then the game is forfeited by the bidding team.------CHANGE
 
 When the game is won successfully both teams record their respective scores divided by 10 and rounded to a whole number (see later for the rounding rules).
 
 When the game is forfeited the team that didn't bid records all points ( including those scored by the bidding team) divided by 10 and rounded (see later for the rounding rules).
 
-When the game hangs the team that bid that game does not record any points but those points are left to the winner of the next game. If the next game hangs then the points accumulate for the game after that and so on!
+When the game hangs the team that bid that game does not record any points but those points are left to the winner of the next game. If the next game hangs then the points accumulate for the game after that and so on!--------------REMOVE
 
 When there was a double declared the team with more points records all points doubled( all bonuses are doubled including the bonus for getting all the hands).
 
@@ -83,7 +83,7 @@ When there was a redouble declared the team with more points records all the poi
 
 When there was a double or a redouble declared all points remain for the winner of the next game.
 
-The game ends when one team records 151 points or more. If both teams both score more than 151 points at the same time then the team with more points wins. If the scores are equal over this figure then more games are played until one team takes the lead.
+The game ends when one team records 151 points or more. If both teams both score more than 151 points at the same time then the team with more points wins. If the scores are equal over this figure then more games are played until one team takes the lead.----MAKE IT 152
 
 There is an exception which states that you cannot win the whole game by collecting all hands in one game. In that event the barrier for winning the game is lifted to the current score of the leaders +1.
 
@@ -99,14 +99,30 @@ If a player holds the following combinations of cards and declares so when playi
 | 4 equal cards (10,Q,K,A) | quad | 100 |
 | 4 9's | quad | 150 |
 | 4 Jacks | quad | 200 |
+-------------------------------------------------------------
+CHANGE TO
+-------------------------------------------------------------
+| Combination | Declaration | Points |
+| --- | --- | --- |
+| 4 Aces | four hundred in no trump | 400 |
+| 4 Aces | one hundred in trump | 100 |
+| 4 similar cards(4 kings,q,j,10) | one hundred | 100 |
+| 4 cards in sequence | fifty | 50 |
+| 5 cards in sequence | one hundred | 50 |
+| 3 cards in sequence | sera | 20 |
+| q and k with the sane suit ONLY IN NO TRUMP | baloot | 50 |
+
+
 
 The order of sequence of the cards when getting bonuses is 7,8,9,10,J,Q,K,A.
 
-When the game of No trumps is played the players cannot declare any combinations. You cannot get points for bonuses except for getting all the hands and 10 points for the last hand.
+When the game of No trumps is played the players cannot declare any combinations. You cannot get points for bonuses except for getting all the hands and 10 points for the last hand.---------------CHANGE
 
 If a card participates in a quad and a sequential bonus (triple, 4 in a row, quint) the player can only declare one of the bonuses.
 
-If two different teams declare a sequential bonus, the team that has the longest such sequence scores any points from that bonus. When the sequential bonuses are of equal length the sequence which is considered higher is the one that starts with the highest card (in bonus sequence strength). If the highest bids of both teams are of equal strength then no team records sequential bonuses scores.
+If two different teams declare a sequential bonus, the team that has the longest such sequence scores any points from that bonus. When the sequential bonuses are of equal length the sequence which is considered higher is the one that starts with the highest card (in bonus sequence strength). If the highest bids of both teams are of equal strength
+
+ then no team records sequential bonuses scores.------NO FIRST TO DECLARE WINS
 
 If two different teams declare a quad bonus then the team that has the sequence from higher cards ( in trump suit order) scores the points.
 

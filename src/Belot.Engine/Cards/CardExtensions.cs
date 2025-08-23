@@ -47,7 +47,6 @@
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int GetValue(this Card card, BidType contract) =>
-            contract.HasFlag(BidType.AllTrumps) ? TrumpValues[(int)card.Type] :
             contract.HasFlag(BidType.NoTrumps) ? NoTrumpValues[(int)card.Type] :
             contract == BidType.Pass ? 0 :
             contract.ToCardSuit() == card.Suit ? TrumpValues[(int)card.Type] : NoTrumpValues[(int)card.Type];

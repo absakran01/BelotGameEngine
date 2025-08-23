@@ -17,7 +17,6 @@
                                                          BidType.Hearts,
                                                          BidType.Spades,
                                                          BidType.NoTrumps,
-                                                         BidType.AllTrumps,
                                                      };
 
         public BidType GetBid(PlayerGetBidContext context)

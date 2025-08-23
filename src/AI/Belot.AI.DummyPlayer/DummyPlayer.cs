@@ -18,12 +18,6 @@
                 return BidType.NoTrumps;
             }
 
-            if (context.MyCards.GetCount(x => x.Type == CardType.Jack) >= 3
-                && context.AvailableBids.HasFlag(BidType.AllTrumps))
-            {
-                return BidType.AllTrumps;
-            }
-
             for (var i = 0; i < Card.AllSuits.Length; i++)
             {
                 var cardSuit = Card.AllSuits[i];
@@ -44,11 +38,6 @@
 
         public PlayCardAction PlayCard(PlayerPlayCardContext context)
         {
-            if (context.CurrentContract.Type.HasFlag(BidType.AllTrumps))
-            {
-                return new PlayCardAction(context.AvailableCardsToPlay.Lowest(x => x.TrumpOrder));
-            }
-
             if (context.CurrentContract.Type.HasFlag(BidType.NoTrumps))
             {
                 return new PlayCardAction(context.AvailableCardsToPlay.Lowest(x => x.NoTrumpOrder));

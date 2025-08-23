@@ -20,11 +20,6 @@
 
             var firstCardSuit = currentTrickActions[0].Card.Suit;
 
-            // Playing AllTrumps
-            if (contract.HasFlag(BidType.AllTrumps))
-            {
-                return GetValidCardsForAllTrumps(playerCards, currentTrickActions, firstCardSuit);
-            }
 
             // Playing NoTrumps
             if (contract.HasFlag(BidType.NoTrumps))

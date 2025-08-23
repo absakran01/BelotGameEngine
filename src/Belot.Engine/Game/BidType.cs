@@ -11,7 +11,7 @@
         Hearts = 1 << 2, // ♥
         Spades = 1 << 3, // ♠
         NoTrumps = 1 << 4,
-        AllTrumps = 1 << 5,
+        // AllTrumps = 1 << 5,
         Double = 1 << 6,
         ReDouble = 1 << 7,
     }

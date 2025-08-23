@@ -12,18 +12,7 @@
         {
             var firstCard = trickActions[0].Card;
             var bestAction = trickActions[0];
-            if (contract.Type.HasFlag(BidType.AllTrumps))
-            {
-                for (var i = 1; i < trickActions.Count; i++)
-                {
-                    if (trickActions[i].Card.Suit == firstCard.Suit
-                        && trickActions[i].Card.TrumpOrder > bestAction.Card.TrumpOrder)
-                    {
-                        bestAction = trickActions[i];
-                    }
-                }
-            }
-            else if (contract.Type.HasFlag(BidType.NoTrumps))
+            if (contract.Type.HasFlag(BidType.NoTrumps))
             {
                 for (var i = 1; i < trickActions.Count; i++)
                 {

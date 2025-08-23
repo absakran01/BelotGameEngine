@@ -20,23 +20,13 @@
                 return false;
             }
 
-            if (contract.HasFlag(BidType.AllTrumps))
+            // Clubs, Diamonds, Hearts or Spades
+            if (playedCard.Suit != contract.ToCardSuit())
             {
-                if (currentTrickActions.Count > 0 && currentTrickActions[0].Card.Suit != playedCard.Suit)
-                {
-                    // Belote is only allowed when playing card from the same suit as the first card played
-                    return false;
-                }
+                // Belote is only allowed when playing card from the trump suit
+                return false;
             }
-            else
-            {
-                // Clubs, Diamonds, Hearts or Spades
-                if (playedCard.Suit != contract.ToCardSuit())
-                {
-                    // Belote is only allowed when playing card from the trump suit
-                    return false;
-                }
-            }
+            
 
             return playerCards.Contains(
                 playedCard.Type == CardType.Queen

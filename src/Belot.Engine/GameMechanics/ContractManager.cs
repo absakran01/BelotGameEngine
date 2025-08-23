@@ -133,11 +133,6 @@
                 availableBids |= BidType.NoTrumps;
             }
 
-            if (cleanContract < BidType.AllTrumps)
-            {
-                availableBids |= BidType.AllTrumps;
-            }
-
             if (!currentPlayer.IsInSameTeamWith(currentContract.Player) && currentContract.Type != BidType.Pass)
             {
                 if (currentContract.Type.HasFlag(BidType.Double))

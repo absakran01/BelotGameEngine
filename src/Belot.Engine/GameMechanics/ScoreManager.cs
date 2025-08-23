@@ -155,27 +155,6 @@
 
         internal static int RoundPoints(BidType bidType, int points, bool winner)
         {
-            // All trumps
-            if (bidType.HasFlag(BidType.AllTrumps))
-            {
-                if (points % 10 > 4)
-                {
-                    return (points / 10) + 1;
-                }
-
-                if (points % 10 == 4)
-                {
-                    if (winner)
-                    {
-                        return points / 10;
-                    }
-
-                    return (points / 10) + 1;
-                }
-
-                return points / 10;
-            }
-
             // No trumps
             if (bidType.HasFlag(BidType.NoTrumps))
             {

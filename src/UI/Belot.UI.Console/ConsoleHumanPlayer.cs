@@ -59,11 +59,6 @@
                     availableBidsList.Add("N(o)");
                 }
 
-                if (context.AvailableBids.HasFlag(BidType.AllTrumps))
-                {
-                    availableBidsList.Add("A(ll)");
-                }
-
                 if (context.AvailableBids.HasFlag(BidType.Double))
                 {
                     availableBidsList.Add("2(double)");
@@ -88,12 +83,12 @@
                 BidType bid;
                 switch (char.ToUpper(playerContract[0]))
                 {
-                    case 'A':
-                        bid = BidType.AllTrumps;
-                        break;
+                        // sunn
                     case 'N':
                         bid = BidType.NoTrumps;
                         break;
+
+                        // hukum
                     case 'S':
                         bid = BidType.Spades;
                         break;
