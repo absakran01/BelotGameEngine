@@ -35,6 +35,8 @@
                     AnnounceType.FourOfAKind => 100,
                     AnnounceType.FourNines => 150,
                     AnnounceType.FourJacks => 200,
+                    AnnounceType.FourAcesNoTrump => 400,
+                    AnnounceType.FourAcesTrump => 100,
                     _ => 0,
                 };
 
@@ -58,6 +60,8 @@
                     AnnounceType.SequenceOf5 => $"Quinte to {this.Card}",
                     AnnounceType.SequenceOf4 => $"Quarte to {this.Card}",
                     AnnounceType.SequenceOf3 => $"Tierce to {this.Card}",
+                    AnnounceType.FourAcesNoTrump => $"4 Aces (No Trump)",
+                    AnnounceType.FourAcesTrump => $"4 Aces (Trump)",
                     _ => throw new BelotGameException($"Invalid announce type {this.Type} ({(int)this.Type})"),
                 };
 

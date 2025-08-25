@@ -106,13 +106,11 @@ CHANGE TO
 | --- | --- | --- |
 | 4 Aces | four hundred in no trump | 400 |
 | 4 Aces | one hundred in trump | 100 |
-| 4 similar cards(4 kings,q,j,10) | one hundred | 100 |
-| 4 cards in sequence | fifty | 50 |
-| 5 cards in sequence | one hundred | 50 |
-| 3 cards in sequence | sera | 20 |
-| q and k with the sane suit ONLY IN NO TRUMP | baloot | 50 |
-
-
+| 4 duplicate cards(4 kings,q,j,10) | one hundred | 100 |
+| 4 cards in sequence(same suit?) | fifty | 50 |
+| 5 cards in sequence (same suit?) | one hundred | 50 |
+| 3 cards in sequence (same suit?) | sera | 20 |
+| q and k with the same suit ONLY IN NO TRUMP | baloot | 50 |
 
 The order of sequence of the cards when getting bonuses is 7,8,9,10,J,Q,K,A.
 

@@ -12,5 +12,7 @@
         FourOfAKind = 8, // 100
         FourNines = 9, // 150
         FourJacks = 10, // 200
+        FourAcesNoTrump = 11, // 400
+        FourAcesTrump = 12, // 100
     }
 }

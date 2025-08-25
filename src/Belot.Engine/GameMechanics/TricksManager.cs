@@ -143,6 +143,24 @@
                             throw new BelotGameException($"Invalid card played from {currentPlayer} player.");
                         }
 
+                        //Four hundred
+                        if (action.FourHundred)
+                        {
+                            if (this.validAnnouncesService.IsFourHundredAllowed(
+                                playerCards[currentPlayerIndex],
+                                currentContract.Type,
+                                trickActions,
+                                action.Card))
+                            {
+                                announces.Add(new Announce(AnnounceType.FourAcesNoTrump, action.Card) { Player = currentPlayer });
+                            }
+                            else
+                            {
+                                action.FourHundred = false;
+                            }
+                        }
+                        
+                        
                         // Belote
                         if (action.Belote)
                         {

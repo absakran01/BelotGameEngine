@@ -26,12 +26,37 @@
                 // Belote is only allowed when playing card from the trump suit
                 return false;
             }
-            
+
 
             return playerCards.Contains(
                 playedCard.Type == CardType.Queen
                     ? Card.GetCard(playedCard.Suit, CardType.King)
                     : Card.GetCard(playedCard.Suit, CardType.Queen));
+        }
+
+        public bool IsFourHundredAllowed(CardCollection playerCards, BidType contract, IList<PlayCardAction> currentTrickActions, Card playedCard)
+        {
+            if (playedCard.Type != CardType.Ace)
+            {
+                return false;
+            }
+
+            if (!contract.HasFlag(BidType.NoTrumps))
+            {
+                return false;
+            }
+
+
+            int numOfAces = 0;
+            foreach (var action in currentTrickActions)
+            {
+                if (action.Card.Type == CardType.Ace)
+                {
+                    numOfAces++;
+                }
+            }
+            System.Diagnostics.Debug.WriteLine($"Number of aces in current trick: {numOfAces}");
+            return numOfAces == 4;
         }
 
         public IList<Announce> GetAvailableAnnounces(CardCollection playerCards)
@@ -40,6 +65,7 @@
             var combinations = new List<Announce>(2);
             FindFourOfAKindAnnounces(cards, combinations);
             FindSequentialAnnounces(cards, combinations);
+            FindFourAcesAnnounces(playerCards, combinations);
             return combinations;
         }
 
@@ -211,7 +237,7 @@
                             case 6:
                                 combinations.Add(new Announce(AnnounceType.SequenceOf6, suitedCards[i - 1]));
                                 break;
-                            //// Cases 7 and 8 cannot happen here, they are instead handled in the code after this for loop
+                                //// Cases 7 and 8 cannot happen here, they are instead handled in the code after this for loop
                         }
 
                         count = 1;
@@ -242,6 +268,37 @@
                         combinations.Add(new Announce(AnnounceType.SequenceOf3, suitedCards[suitedCards.Count - 1]));
                         break;
                 }
+            }
+        }
+        private static void FindFourAcesAnnounces(CardCollection playerCards, ICollection<Announce> combinations)
+        {
+            // Group by type
+            var countOfCardTypes = new int[8];
+            foreach (var card in playerCards)
+            {
+                countOfCardTypes[(int)card.Type]++;
+            }
+
+            // Check for four aces
+            if (countOfCardTypes[(int)CardType.Ace] == 4)
+            {
+                combinations.Add(new Announce(AnnounceType.FourAcesTrump, Card.GetCard(CardSuit.Spade, CardType.Ace)));
+            }
+        }
+
+        private static void FindFourHundredAnnounces(CardCollection playerCards, ICollection<Announce> combinations)
+        {
+            // Group by type
+            var countOfCardTypes = new int[8];
+            foreach (var card in playerCards)
+            {
+                countOfCardTypes[(int)card.Type]++;
+            }
+
+            // Check for four hundred
+            if (countOfCardTypes[(int)CardType.Ten] == 4)
+            {
+                combinations.Add(new Announce(AnnounceType.FourAcesNoTrump, Card.GetCard(CardSuit.Spade, CardType.Ten)));
             }
         }
     }
