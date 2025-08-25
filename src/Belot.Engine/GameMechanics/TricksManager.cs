@@ -83,7 +83,7 @@
                 for (var actionNumber = 0; actionNumber < 4; actionNumber++)
                 {
                     // Announces
-                    if (trickNumber == 1 && !currentContract.Type.HasFlag(BidType.NoTrumps))
+                    if (trickNumber == 1)
                     {
                         // Prepare GetAnnounces context
                         var availableAnnounces =
@@ -144,6 +144,7 @@
                         }
 
                         //Four hundred
+                        //TODO: fix coninations and Four hundred aooearing each trick
                         if (action.FourHundred)
                         {
                             if (this.validAnnouncesService.IsFourHundredAllowed(

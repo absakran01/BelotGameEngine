@@ -4,10 +4,11 @@
 
     public class PlayCardAction
     {
-        public PlayCardAction(Card card, bool announceBeloteIfAvailable = true)
+        public PlayCardAction(Card card, bool announceBeloteIfAvailable = true, bool announceFourHundredIfAvailable = true)
         {
             this.Card = card;
             this.Belote = announceBeloteIfAvailable;
+            this.FourHundred = announceFourHundredIfAvailable;
         }
 
         public Card Card { get; }

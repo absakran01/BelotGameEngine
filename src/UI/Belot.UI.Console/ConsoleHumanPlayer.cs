@@ -190,6 +190,7 @@
                     {
                         var cardToPlay = allowedCardsList[cardIndex - 1];
                         var announceBelote = false;
+                        var announceFourHundred = false;
                         if (this.announcesService.IsBeloteAllowed(context.MyCards, context.CurrentContract.Type, context.CurrentTrickActions.ToList(), cardToPlay))
                         {
                             ConsoleHelper.WriteOnPosition(new string(' ', 78), 0, Console.WindowHeight - 3);
@@ -203,8 +204,21 @@
                                 announceBelote = true;
                             }
                         }
+                        if (this.announcesService.IsFourHundredAllowed(context.MyCards, context.CurrentContract.Type, context.CurrentTrickActions.ToList(), cardToPlay))
+                        {
+                            ConsoleHelper.WriteOnPosition(new string(' ', 78), 0, Console.WindowHeight - 3);
+                            ConsoleHelper.WriteOnPosition(new string(' ', 78), 0, Console.WindowHeight - 2);
+                            ConsoleHelper.WriteOnPosition(new string(' ', 78), 0, Console.WindowHeight - 1);
+                            ConsoleHelper.WriteOnPosition("Y(es) / N(o)", 0, Console.WindowHeight - 2);
+                            ConsoleHelper.WriteOnPosition("You have Four Hundred! Do you want to announce it? Y/N ", 0, Console.WindowHeight - 3);
+                            var answer = Console.ReadLine();
+                            if (!string.IsNullOrWhiteSpace(answer) && answer.Trim()[0] != 'N')
+                            {
+                                announceFourHundred = true;
+                            }
+                        }
 
-                        return new PlayCardAction(cardToPlay, announceBelote);
+                        return new PlayCardAction(cardToPlay, announceBelote, announceFourHundred);
                     }
                 }
             }

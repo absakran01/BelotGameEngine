@@ -36,11 +36,6 @@
 
         public bool IsFourHundredAllowed(CardCollection playerCards, BidType contract, IList<PlayCardAction> currentTrickActions, Card playedCard)
         {
-            if (playedCard.Type != CardType.Ace)
-            {
-                return false;
-            }
-
             if (!contract.HasFlag(BidType.NoTrumps))
             {
                 return false;
@@ -48,15 +43,15 @@
 
 
             int numOfAces = 0;
-            foreach (var action in currentTrickActions)
+            foreach (var card in playerCards)
             {
-                if (action.Card.Type == CardType.Ace)
+                if (card.Type == CardType.Ace)
                 {
                     numOfAces++;
                 }
             }
-            System.Diagnostics.Debug.WriteLine($"Number of aces in current trick: {numOfAces}");
-            return numOfAces == 4;
+            System.Diagnostics.Debug.WriteLine($"Number of aces in player's hand: {numOfAces}");
+            return numOfAces == 1;
         }
 
         public IList<Announce> GetAvailableAnnounces(CardCollection playerCards)
@@ -286,20 +281,5 @@
             }
         }
 
-        private static void FindFourHundredAnnounces(CardCollection playerCards, ICollection<Announce> combinations)
-        {
-            // Group by type
-            var countOfCardTypes = new int[8];
-            foreach (var card in playerCards)
-            {
-                countOfCardTypes[(int)card.Type]++;
-            }
-
-            // Check for four hundred
-            if (countOfCardTypes[(int)CardType.Ten] == 4)
-            {
-                combinations.Add(new Announce(AnnounceType.FourAcesNoTrump, Card.GetCard(CardSuit.Spade, CardType.Ten)));
-            }
-        }
     }
 }
