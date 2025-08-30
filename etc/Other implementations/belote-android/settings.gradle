@@ -1,0 +1,3 @@
+// <project-root>/settings.gradle
+rootProject.name = "BeloteRoot"
+include(":belote-android")
