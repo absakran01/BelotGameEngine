@@ -15,14 +15,12 @@
     <string name="HeartsAnnounce">Купа</string>
     <string name="SpadesAnnounce">Пика</string>
     <string name="NotTrumpsAnnounce">Без коз</string>
-    <string name="AllTrumpsAnnounce">Всичко коз</string>
     <string name="PassAnnounceShort">Пас</string>
     <string name="ClubsAnnounceShort">Спатия</string>
     <string name="DiamondsAnnounceShort">Каро</string>
     <string name="HeartsAnnounceShort">Купа</string>
     <string name="SpadesAnnounceShort">Пика</string>
     <string name="NotTrumpsAnnounceShort">БК</string>
-    <string name="AllTrumpsAnnounceShort">ВК</string>  
     <string name="DoubleAnnounce">Контра</string>
     <string name="RedoubleAnnounce">Реконтра</string>   
     <string name="Announce">Анонс</string>

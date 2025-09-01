@@ -135,9 +135,6 @@ public final class PlayGameLogic {
         if (announce == null) {
             return nullPlayCardStrategy;
         }
-        if (AnnounceSuit.AllTrump.equals(announce.getAnnounceSuit())) {
-            return atPlayCardStrategy;
-        }
         if (AnnounceSuit.NotTrump.equals(announce.getAnnounceSuit())) {
             return ntPlayCardStrategy;
         }
@@ -152,9 +149,6 @@ public final class PlayGameLogic {
     private PointsCalculator getPointsCalculatorByAnnounce(Announce announce) {
         if (announce == null) {
             return nullPointsCalculator;
-        }
-        if (AnnounceSuit.AllTrump.equals(announce.getAnnounceSuit())) {
-            return atPointsCalculator;
         }
         if (AnnounceSuit.NotTrump.equals(announce.getAnnounceSuit())) {
             return ntPointsCalculator;

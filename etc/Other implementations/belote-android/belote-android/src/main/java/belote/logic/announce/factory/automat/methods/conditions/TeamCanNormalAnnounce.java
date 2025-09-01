@@ -22,7 +22,8 @@ public final class TeamCanNormalAnnounce extends BaseTeamCanAnnounce {
     /**
      * Minimum points to make normal announce (can hold double announce).
      */
-    private static final int MinPointsToMakeNormalAnnounce = AnnounceSuit.AllTrump.getBasePoints() * 2;
+    // Removed AllTrump logic as requested
+    private static final int MinPointsToMakeNormalAnnounce = 0;
 
     /**
      * Constructor.

@@ -140,8 +140,10 @@ public class PackExtraAnnouncesManager implements Serializable {
                     count++;
                     while (copyPack.hasPrevFromSameSuit(card) && count < MAX_SEQUENCE_CARD_COUNT) {
                         count++;
-                        card = copyPack.findCard(Rank.getSTRankBefore(card.getRank()), suit);
-                        copyPack.remove(card);
+                            card = copyPack.findCard(Rank.getSTRankBefore(card.getRank()), suit);
+                            if (card != null) {
+                                copyPack.remove(card);
+                            }
                     }
                     createSequence(count, maxCard);
                 }

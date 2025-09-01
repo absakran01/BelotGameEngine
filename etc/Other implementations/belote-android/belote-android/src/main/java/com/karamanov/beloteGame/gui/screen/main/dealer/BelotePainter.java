@@ -543,9 +543,8 @@ final class BelotePainter extends BasePainter {
             paint.setColor(Color.clCream.getRGB());
             canvas.drawText(playerShort, x, y, paint);
 
-            if (announce.getAnnounceSuit().equals(AnnounceSuit.AllTrump) || announce.getAnnounceSuit().equals(AnnounceSuit.NotTrump)) {
-                String announceShort = announce.getAnnounceSuit().equals(AnnounceSuit.AllTrump) ? context.getString(R.string.AllTrumpsAnnounceShort) : context
-                        .getString(R.string.NotTrumpsAnnounceShort);
+            if (announce.getAnnounceSuit().equals(AnnounceSuit.NotTrump)) {
+                String announceShort = context.getString(R.string.NotTrumpsAnnounceShort);
 
                 bounds = new Rect();
                 paint.getTextBounds(announceShort, 0, announceShort.length(), bounds);

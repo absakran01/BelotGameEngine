@@ -94,17 +94,11 @@ public final class Announce implements Serializable {
      * @return boolean true if announce suit is color false otherwise.
      */
     public boolean isTrumpAnnounce() {
-        return suit.isTrumpSuit();
+        // ...existing code... (All Trump logic removed)
+        return false;
     }
 
-    /**
-     * Returns AllTrump suit normal type announce for the provided player.
-     * @param player announce player.
-     * @return Announce all trump announce for the provided player.
-     */
-    public static Announce createATNormalAnnounce(final Player player) {
-        return new Announce(AnnounceSuit.AllTrump, AnnounceType.Normal, player);
-    }
+    // ...existing code... (All Trump announce creation removed)
 
     /**
      * Returns not trump normal announce for the provided player.

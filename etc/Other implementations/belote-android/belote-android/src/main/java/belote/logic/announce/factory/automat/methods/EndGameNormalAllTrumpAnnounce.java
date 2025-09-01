@@ -44,6 +44,7 @@ public final class EndGameNormalAllTrumpAnnounce extends ConditionListMethod {
      * @return an Announce instance.
      */
     protected Announce createAnnounce(final Player player) {
-        return Announce.createATNormalAnnounce(player);
+    // Removed AllTrump logic as requested
+    return null;
     }
 }

@@ -2,8 +2,6 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <string name="Ace">Асо</string>
     <string name="AceSign">A</string>
-    <string name="AllTrumpsAnnounce">Всичко коз</string>
-    <string name="AllTrumpsAnnounceShort">ВК</string>
     <string name="Announce">Анонс</string>
     <string name="Autor">Димитър Караманов</string>
     <string name="Belote">Белот</string>

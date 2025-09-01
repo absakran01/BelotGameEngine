@@ -15,14 +15,12 @@
     <string name="HeartsAnnounce">Hearts</string>
     <string name="SpadesAnnounce">Spades</string>
     <string name="NotTrumpsAnnounce">No Trumps</string>
-    <string name="AllTrumpsAnnounce">All Trumps</string>
     <string name="PassAnnounceShort">Pass</string>
     <string name="ClubsAnnounceShort">Clubs</string>
     <string name="DiamondsAnnounceShort">Diamonds</string>
     <string name="HeartsAnnounceShort">Hearts</string>
     <string name="SpadesAnnounceShort">Spades</string>
     <string name="NotTrumpsAnnounceShort">NT</string>
-    <string name="AllTrumpsAnnounceShort">AT</string>  
     <string name="DoubleAnnounce">Double</string>
     <string name="RedoubleAnnounce">Redoble</string>   
     <string name="Announce">Announce</string>

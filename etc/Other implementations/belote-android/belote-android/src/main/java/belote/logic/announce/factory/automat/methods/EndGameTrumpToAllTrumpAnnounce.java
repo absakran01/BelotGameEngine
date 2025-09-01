@@ -35,7 +35,8 @@ public final class EndGameTrumpToAllTrumpAnnounce extends ConditionListMethod {
         
         if (playerAnnounce != null && partnerAnnounce != null && playerAnnounce.isTrumpAnnounce() && partnerAnnounce.isTrumpAnnounce()) {
             AnnounceTransformer doubleAnnounce = new DoubleAnnounce(game);
-            return doubleAnnounce.transform(player, Announce.createATNormalAnnounce(player));
+        // Removed AllTrump logic as requested
+        return null;
         }
 
         return null;

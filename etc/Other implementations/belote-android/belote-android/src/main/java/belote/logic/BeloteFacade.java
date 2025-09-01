@@ -122,7 +122,7 @@ public class BeloteFacade {
     private void arrangePlayerCards(final Player player, final Announce announce) {
         if (announce == null) {
             player.getCards().arrange();
-        } else if (announce.getAnnounceSuit().equals(AnnounceSuit.AllTrump)) {
+    // Removed AllTrump logic as requested
             player.getCards().arrangeAT();
         } else if (announce.getAnnounceSuit().equals(AnnounceSuit.NotTrump)) {
             player.getCards().arrangeNT();
@@ -394,13 +394,10 @@ public class BeloteFacade {
         removePlayerCard(player, card);
 
         Announce announce = game.getAnnounceList().getContractAnnounce();
-        if (announce != null && announce.getAnnounceSuit().equals(AnnounceSuit.AllTrump) && Rank.Jack.equals(card.getRank())) {
-            player.getJackAceSuits().add(card.getSuit());
-        }
-
-        if (announce != null && announce.getAnnounceSuit().equals(AnnounceSuit.NotTrump) && Rank.Ace.equals(card.getRank())) {
-            player.getJackAceSuits().add(card.getSuit());
-        }
+    // Removed AllTrump logic as requested
+    if (announce != null && announce.getAnnounceSuit().equals(AnnounceSuit.NotTrump) && Rank.Ace.equals(card.getRank())) {
+        player.getJackAceSuits().add(card.getSuit());
+    }
     }
 
     /**

@@ -72,7 +72,7 @@ public final class TextDecorator {
         announceTypes.put(AnnounceType.Redouble, context.getString(R.string.RedoubleAnnounce));
 
         // Announce suits initialization
-        announceSuits.put(AnnounceSuit.AllTrump, context.getString(R.string.AllTrumpsAnnounce));
+    // Removed AllTrump logic as requested
         announceSuits.put(AnnounceSuit.Club, context.getString(R.string.ClubsAnnounce));
         announceSuits.put(AnnounceSuit.Diamond, context.getString(R.string.DiamondsAnnounce));
         announceSuits.put(AnnounceSuit.Heart, context.getString(R.string.HeartsAnnounce));
@@ -81,7 +81,7 @@ public final class TextDecorator {
         announceSuits.put(AnnounceSuit.NotTrump, context.getString(R.string.NotTrumpsAnnounce));
 
         // Short announce suits initialization
-        shortAnnounceSuits.put(AnnounceSuit.AllTrump, context.getString(R.string.AllTrumpsAnnounceShort));
+    // Removed AllTrump logic as requested
         shortAnnounceSuits.put(AnnounceSuit.Club, context.getString(R.string.ClubsAnnounceShort));
         shortAnnounceSuits.put(AnnounceSuit.Diamond, context.getString(R.string.DiamondsAnnounceShort));
         shortAnnounceSuits.put(AnnounceSuit.Heart, context.getString(R.string.HeartsAnnounceShort));

@@ -66,13 +66,11 @@ public final class RedoubleAnnounce extends ConditionListMethod {
                 return ntRedoubleAdviser.getAnnounce(player);
             }
 
-            if (announce.getAnnounceSuit().equals(AnnounceSuit.AllTrump)) {
-                return atRedoubleAdviser.getAnnounce(player);
+    // Removed AllTrump logic as requested
             }
 
             return clRedoubleAdviser.getAnnounce(player);
         }
 
-        return null;
+    // Removed AllTrump logic as requested
     }
-}

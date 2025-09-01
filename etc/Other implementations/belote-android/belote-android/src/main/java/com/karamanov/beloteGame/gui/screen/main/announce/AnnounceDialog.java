@@ -74,7 +74,7 @@ public class AnnounceDialog extends Dialog {
     /**
      * All trump button.
      */
-    private final AnnounceButtonField jrbAllTrump;
+    // Removed AllTrump button as requested
 
     /**
      * Double button.
@@ -240,8 +240,7 @@ public class AnnounceDialog extends Dialog {
         row.addView(relative);
 
         // Right
-        jrbAllTrump = new AnnounceButtonField(context, context.getString(R.string.AllTrumpsAnnounce));
-        jrbAllTrump.setOnClickListener(mfl);
+    // Removed AllTrump button creation as requested
 
         pAllJacks = new ImageView(context);
         pAllJacks.setImageResource(R.drawable.all_jacks);
@@ -255,8 +254,7 @@ public class AnnounceDialog extends Dialog {
 
         trlp = new TableRow.LayoutParams();
         trlp.weight = 0.25f;
-        jrbAllTrump.setLayoutParams(trlp);
-        row.addView(jrbAllTrump);
+    // Removed AllTrump button layout as requested
 
         tl.addView(row);
 
@@ -423,7 +421,7 @@ public class AnnounceDialog extends Dialog {
         pSpade.setEnabled(true);
         jrbNotTrump.setEnabled(true);
         pAllAces.setEnabled(true);
-        jrbAllTrump.setEnabled(true);
+    // Removed AllTrump button enable as requested
         pAllJacks.setEnabled(true);
 
         Announce last = game.getGame().getAnnounceList().getContractAnnounce();
@@ -469,10 +467,6 @@ public class AnnounceDialog extends Dialog {
                 pAllAces.setEnabled(false);
             }
 
-            if (last.getAnnounceSuit().compareTo(AnnounceSuit.AllTrump) >= 0) {
-                jrbAllTrump.setEnabled(false);
-                pAllJacks.setEnabled(false);
-            }
         }
 
         if (last == null) {
@@ -516,9 +510,7 @@ public class AnnounceDialog extends Dialog {
             return Announce.createNTNormalAnnounce(player);
         }
 
-        if (receiver == jrbAllTrump) {
-            return Announce.createATNormalAnnounce(player);
-        }
+    // Removed AllTrump button logic as requested
 
         if (receiver == jrbDouble) {
             Announce announce = game.getGame().getAnnounceList().getContractAnnounce();

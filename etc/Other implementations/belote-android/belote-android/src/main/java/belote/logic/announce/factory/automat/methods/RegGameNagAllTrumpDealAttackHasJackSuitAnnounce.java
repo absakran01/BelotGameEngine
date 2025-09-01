@@ -48,6 +48,7 @@ public final class RegGameNagAllTrumpDealAttackHasJackSuitAnnounce extends Condi
      * @return an Announce instance.
      */
     protected Announce createAnnounce(Player player) {
-        return Announce.createATNormalAnnounce(player);
+    // Removed AllTrump logic as requested
+    return null;
     }
 }

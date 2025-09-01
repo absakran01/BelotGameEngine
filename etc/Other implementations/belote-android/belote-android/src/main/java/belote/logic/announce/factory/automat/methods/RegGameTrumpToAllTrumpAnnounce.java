@@ -33,7 +33,8 @@ public final class RegGameTrumpToAllTrumpAnnounce implements AnnounceMethod {
         if (playerAnnounce != null && partnerAnnounce != null && playerAnnounce.isTrumpAnnounce() && partnerAnnounce.isTrumpAnnounce()
                 && (oppositeTeamHasNotAnnounce || teamAttack)) {
             AnnounceTransformer doubleAnnounce = new DoubleAnnounce(game);
-            return doubleAnnounce.transform(player, Announce.createATNormalAnnounce(player));
+        // Removed AllTrump logic as requested
+        return null;
         }
 
         return null;

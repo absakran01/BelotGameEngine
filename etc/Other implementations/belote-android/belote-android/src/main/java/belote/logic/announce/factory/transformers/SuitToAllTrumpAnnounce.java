@@ -42,7 +42,8 @@ public final class SuitToAllTrumpAnnounce extends BaseAnnounceTransformer {
 
             if (partnerAnnounce != null) {
                 if (result.getAnnounceSuit().compareTo(partnerAnnounce.getAnnounceSuit()) < 0) {
-                    result = Announce.createATNormalAnnounce(player);
+                // Removed AllTrump logic as requested
+                result = null;
                 }
             }
         }

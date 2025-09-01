@@ -52,10 +52,7 @@ public abstract class AnnounceSuit extends ComparableObject {
      */
     public static final AnnounceSuit NotTrump = new NotTrump();
 
-    /**
-     * All trump announce constant.
-     */
-    public static final AnnounceSuit AllTrump = new AllTrump();
+    // AllTrump mode removed
 
     /**
      * AnnounceSuit type.
@@ -82,7 +79,7 @@ public abstract class AnnounceSuit extends ComparableObject {
      * Trump suit classes are Club, Diamond, Heart and Spade. If the objects is instance of some of them the result is true otherwise is false.
      * @return boolean true if is color suit false otherwise.
      */
-    public abstract boolean isTrumpSuit();
+    // ...existing code...
 
     /**
      * Returns the game base points for that announce suit. The points are used in double and redouble calculation.
